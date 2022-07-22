@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar> color="primary">
+    <ion-title> Página de Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let cliente of clientes">{{cliente.nome}}</ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-content>
+  <ion-list>
+    <ion-item-slinding *ngFor="let cliente of clientes">
+      <ion-item-options>
+      <ion-option color="danger" (click)="remover(cliente.id)x">Excluir</ion-option>
+    </ion-item-options>
+      <ion-item>{{cliente.nome}}</ion-item>
+    </ion-item-slinding>
+  </ion-list>
+</ion-content>
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="novoCliente()">Novo Cliente</ion-button>
+    <ion-title>Página de Cliente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-slinding *ngFor="let cliente of clientes">
+      <ion-item-options>
+      <ion-item-option color="danger" (click)="remover(cliente.id)">Excluir</ion-item-option>
+      <ion-item-option color="sucess" (click)="atualizar(cliente)">Editar</ion-item-option>
+    </ion-item-options>
+      <ion-item>{{cliente.nome}}</ion-item>
+    </ion-item-slinding>
+  </ion-list>
+</ion-content>
